@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import {createDrawerNavigator} from 'react-navigation';
+import { View, Text , Dimensions, SafeAreaView, ScrollView } from 'react-native';
+import {createDrawerNavigator, DrawerItems} from 'react-navigation';
 import Acerca from '../../pantallas/Acerca';
 import Noticias from '../../pantallas/Noticias';
 import Galeria from '../../pantallas/Galeria';
@@ -22,5 +22,6 @@ export const NavDrawer = createDrawerNavigator (
 
     },
     {
-       contentComponent: ContenidoDrawer
+        contentComponent: ContenidoDrawer,
+        initialRouteName: 'Noticias',
     });

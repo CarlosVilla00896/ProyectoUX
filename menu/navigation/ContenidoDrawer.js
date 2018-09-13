@@ -1,8 +1,13 @@
 
 import React, { Component } from 'react';
-import {NavigationActions} from 'react-navigation';
-import { Text, View, StyleSheet, ImageBackground,Header } from 'react-native'
+import {NavigationActions, DrawerItems} from 'react-navigation';
+import { Text, View, StyleSheet, ImageBackground, SafeAreaView, ScrollView, Dimensions, Image} from 'react-native'
 import { white } from 'ansi-colors';
+
+import { Container, Header, Content } from 'native-base';
+import Icon from '/Users/PC/Documents/GitHub/ProyectoUX/node_modules/@expo/vector-icons/Entypo';
+import Icon2 from '/Users/PC/Documents/GitHub/ProyectoUX/node_modules/@expo/vector-icons/FontAwesome';
+import Icon3 from '/Users/PC/Documents/GitHub/ProyectoUX/node_modules/@expo/vector-icons/Ionicons';
 
 export default class ContenidoDrawer extends React.Component {
     
@@ -20,26 +25,32 @@ export default class ContenidoDrawer extends React.Component {
         <View style={styles.container}>
            
             <View style={styles.headerContainer}> 
-                    <Text style={styles.headerText}>Ruta 5, Honduras</Text>
+                    <Image source = {require('/Users/PC/Documents/GitHub/ProyectoUX/images/logo.jpg')} style={styles.image}></Image>
             </View>
             <View style={styles.screenContainer}>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('Acerca')}>Acerca de</Text>
+                    <Icon name= "home" />
+                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Acerca')}>Acerca de</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('Noticias')}>Noticias</Text>
+                    <Icon type="Entypo"  name = "news"/>
+                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Noticias')}>Noticias</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('Galeria')}>Galerias</Text>
+                    <Icon name = 'camera'/>
+                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Galeria')}>Galerias</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('Videos')}>Videos</Text>
+                    <Icon2 type = "FontAwesome" name = 'video-camera'/>
+                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Videos')}>Videos</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('Aliados')}>Aliados</Text>
+                    <Icon3 type = "Ionicons" android = 'md-people'/>
+                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Aliados')}>Aliados</Text>
                 </View>
                 <View style={styles.screenStyle}>
-                    <Text onPress={this.navigateToScreen('Contacto')}>Contacto</Text>
+                    <Icon3 type = "Ionicons" ios = 'ios-contact' android = "md-contact"/>
+                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Contacto')}>Contacto</Text>
                 </View>
                 
             </View>
@@ -57,9 +68,10 @@ const styles = StyleSheet.create({
              
     },
     headerContainer: {
-        height: 70,
-        
-
+        height: 150,
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     headerText: {
         color: '#fff8f8',
@@ -74,14 +86,20 @@ const styles = StyleSheet.create({
         height: 30,
         marginTop: 2,
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     screenTextStyle:{
-        fontSize: 20,
-        marginLeft: 20
+        // fontSize: 20,
+        // marginLeft: 20,
+        fontWeight: 'bold',
+        paddingLeft: 5,
     },
     headerStyle:{
         height: 220,
     },
-
+    image: {
+        height: 120,
+        width: 120,
+        borderRadius: 80,
+    }
 });
