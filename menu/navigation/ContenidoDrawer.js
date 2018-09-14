@@ -44,15 +44,6 @@ export default class ContenidoDrawer extends React.Component {
                     <Icon2 type = "FontAwesome" name = 'video-camera'/>
                     <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Videos')}>Videos</Text>
                 </View>
-                <View style={styles.screenStyle}>
-                    <Icon3 type = "Ionicons" android = 'md-people'/>
-                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Aliados')}>Aliados</Text>
-                </View>
-                <View style={styles.screenStyle}>
-                    <Icon3 type = "Ionicons" ios = 'ios-contact' android = "md-contact"/>
-                    <Text style = {styles.screenTextStyle} onPress={this.navigateToScreen('Contacto')}>Contacto</Text>
-                </View>
-                
             </View>
             
         </View>
